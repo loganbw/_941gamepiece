@@ -10,6 +10,9 @@ public class gamePiece {
     private String pieceName;
     Random rng = new Random();
 
+    public void getFrozenStatus(){
+        System.out.println("is your piece frozen? " + frozen);
+    }
 
     public gamePiece() {
 
@@ -20,7 +23,10 @@ public class gamePiece {
     public void move(){
         if(!frozen){
              postionX = rng.nextInt(100) + 1;
-             postionY = rng.nextInt(100) + 1;
+             postionY = rng.nextInt(500) + 1;
+            System.out.println("moved to " + postionX + "," + postionY);
+        }else {
+            System.out.println("Cannot move game piece is frozen!");
         }
     }
     public void freeze(){
